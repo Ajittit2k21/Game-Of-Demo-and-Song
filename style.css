@@ -1,0 +1,290 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* background-image: linear-gradient(to bottom right, black, darkblue, lightblue, white,lightblue,darkblue,black); */
+
+}
+
+.wrapper
+{
+    height: 400px;
+    width: 400px;
+    padding: 25px; /*padding of 25px around*/
+    background: #f8f8f8c2;
+    border-radius: 10px;
+}
+
+/* ul, li, div*/
+.cards, .card, .view
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards 
+{
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between; /*space between each element of the ul*/
+}
+
+.cards .card
+{
+    cursor: pointer;
+    position: relative;
+    height: calc(100% / 4 - 10px);
+    width: calc(100% / 4 - 10px);
+    perspective: 800px; 
+
+}
+    /* perspective: 800px; Applies the same transform as the perspective(<number>) transform function, except that it applies only to the positioned or transformed children of the element, not to the transform on the element itself. */
+    /* transform-style: preserve-3d; */
+    /* transform: rotateY(180deg); */
+
+.BackView, .FrontView
+{
+position: absolute;
+width: 100%;
+height: 100%;
+transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+backface-visibility: hidden;
+}
+
+.cards .card .view
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #fff;
+    border-radius: 7px;
+    transition: transform 0.25s linear;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.51);
+    /* background: rgba(222, 184, 135, 0.751); */
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/*when you want to use '?' symbol instead of the door*/
+/* .card .FrontView
+{
+    color: darkcyan;
+} */
+
+/* .card .BackView
+{
+    transform: rotateY(-180deg);
+} */
+
+.card .BackView img
+{
+    max-width: 45px;
+}
+
+.card.flip .FrontView
+{
+    transform: rotateY(180deg);
+}
+
+.card.flip .BackView
+{
+    transform: rotateY(0deg);
+}
+
+.card.shake
+{
+    animation: shake 0.35s ease-in-out;
+}
+
+@keyframes shake
+{
+    0%, 100%{
+        transform: translateX(0px);
+    }
+
+    20%{
+        transform: translateX(-13px);
+    }
+
+    40%{
+        transform: translateX(13px);
+    }
+
+    60%{
+        transform: translateX(-8px);
+    }
+
+    80%{
+        transform: translateX(8px);
+    }
+}
+
+/* .card .FrontView
+{
+    display: none;
+} */
+
+/* .card .BackView
+{
+    display: none;
+} */
+
+.cards
+{
+    background-color: transparent;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+}
+  
+.card
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+  
+/* .cards:hover .card
+{
+    transform: rotateY(180deg);
+} */
+  
+.FrontView, .BackView
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+  
+.BackView
+{
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+Import Google Font - Poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, black, purple, red);
+    // do not write : background-image: linear-gradient(blue, red);
+}
+
+.wrapper
+{
+    padding: 25px;
+    height: 400px;
+    width: 400px;
+    background: #f8f8f8;
+    border-radius: 10px;
+}
+
+.cards, .card, .view
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards
+{
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards .card
+{
+    position: relative;
+    list-style: none;
+    cursor: grab;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    width: calc(100% / 4 - 10px);
+    height: calc(100% / 4 - 10px);
+    // do not write :  oogi boogi onga boonga
+}
+
+.cards .card .view
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(171, 230, 227, 0.384);
+    border-radius: 7px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 1);
+}
+
+.card .FrontView .span
+{
+    font-size: 45px;
+    color: #6563ff;
+    // do not write : color: plum;
+}
+
+.card .BackView
+{
+    transform: rotateY(-180deg);
+}
+.card .BackView img
+{
+    max-width: 45px;
+}
+
+// do not write : moye moye continues bro..
+
+
+.card .BackView :hover 
+{
+    transform: rotateY(0);
+} */
